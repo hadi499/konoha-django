@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<h3>Registration Form.</h3>
+            <div class="col-6">
+
+                <form action="" method="post">
+                {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="password1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password1" name="password1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password2" class="form-label">Konfirmasi Password</label>
+                        <input type="password" class="form-control" id="password2" name="password2">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary" name="register">Submit</button>                    
+                    </div>
+                    
+                </form>
+
+            </div>
+{% endblock content %}

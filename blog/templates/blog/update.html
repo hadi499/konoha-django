@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<form method="post" enctype="multipart/form-data"> 
+    {% csrf_token %} 
+     <h1>Update Data Shinobi</h1>
+            <div class="col-4 mt-4">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="{{post.id}}">                   
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{post.name}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{post.email}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3">{{post.description}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image :</label>
+                        <img src="{{ post.image.url }}" width="40"> <br>
+                        <input type="file" name="image" id="image">
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-primary"value="Save" >Submit</button>
+
+                </form>
+
+
+            </div>
+   
+</form> 
+
+{% endblock content %}
+
+

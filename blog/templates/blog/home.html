@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<h1 class="mt-3">Daftar Shinobi Konoha</h1>
+            <div class="col-6 mt-4">
+
+                
+                <a href="{% url 'blog-create' %}" class="ms-4"><span class="badge bg-primary">Add Data</span></a>
+                <table class="table">
+                    <thead">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col" class="text-center">Action</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for sh in shinobi %}
+                                <tr>
+                                    <th scope="row">{{forloop.counter}}</th>
+                                    <td scope="row">{{ sh.name}}</td>
+                                    <td class="text-center">
+                                        <a href="{% url 'blog-delete' sh.id %}"><span class="badge rounded-pill bg-danger">delete</span></a>
+                                        <a href="{% url 'blog-update' sh.id %}"><span class="badge rounded-pill bg-warning ">update</span></a>
+                                        <a href="{% url 'blog-detail' sh.id %}"><span class="badge rounded-pill bg-success ">detail</span></a>
+
+                                    </td>
+
+                                </tr>  
+                                {% endfor %}                           
+                            
+                        </tbody>
+                </table>
+
+
+{% endblock content %}
+
+
+
+
