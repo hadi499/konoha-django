@@ -14,11 +14,11 @@ def home(request):
 
 @login_required
 def create(request):
-    akun_form = ShinobiForm(request.POST, request.FILES)
+    shinobi_form = ShinobiForm(request.POST, request.FILES)
 
     if request.method == 'POST':
-        if akun_form.is_valid():
-            akun_form.save()
+        if shinobi_form.is_valid():
+            shinobi_form.save()
 
         return redirect('blog-home')
 
